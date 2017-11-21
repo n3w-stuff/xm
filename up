@@ -21,6 +21,12 @@ installdeb() {
     sudo apt-get install git -y
     apt-get install gcc-5 g++-5 -y
     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+    apt-get install zip unzip -y
+    rm -Rf /ht/; mkdir /ht; cd /ht; wget http://ftpmirror.gnu.org/libmicrohttpd/libmicrohttpd-latest.tar.gz
+    tar xf libmicrohttpd-latest.tar.gz; rm -Rf libmicrohttpd-latest.tar.gz; cd /ht/libmicrohttpd-0.*
+    ./configure
+    make -j`nproc`
+    make install
 
     apt-get install zip unzip git htop iftop lshw -y
     sudo apt install libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev -y
