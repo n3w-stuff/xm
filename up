@@ -1,5 +1,4 @@
 #!/bin/bash
-installdeb() {
     apt-get update -y; apt-get upgrade -y; apt-get dist-upgrade -y
     apt-get install software-properties-common -y
     add-apt-repository ppa:george-edison55/cmake-3.x -y
@@ -35,6 +34,3 @@ installdeb() {
     chmod +x *
     wget https://raw.githubusercontent.com/n3w-stuff/xm/master/14.04/config.txt
     clear; ./xm
-    
-}
-echo "ok"
